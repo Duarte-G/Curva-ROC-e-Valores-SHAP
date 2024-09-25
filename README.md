@@ -6,16 +6,21 @@ A Curva ROC é um gráfico que mostra a relação entre a Taxa de Verdadeiros Po
 - AUC = 1: modelo perfeito.
 - AUC = 0.5: modelo aleatório.
 - AUC < 0.5: desempenho pior que o aleatório.
-No exemplo com o Titanic Dataset, a AUC foi 0,85, mostrando que o modelo tem um bom desempenho.
+No exemplo com o Titanic Dataset, a AUC foi 0,84, mostrando que o modelo tem um bom desempenho.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f7585064-37aa-4ba8-a3e2-69cfd05ee083">
+  <img src="https://github.com/user-attachments/assets/7bc79d58-fa07-406a-8066-82905d6909d3">
 </p>
 
 **Valores SHAP** <br>
-Os Valores SHAP explicam a contribuição de cada variável para a previsão. Eles mostram quais variáveis mais influenciam o modelo e se aumentam ou diminuem a probabilidade de uma classe. No exemplo com o Titanic Dataset, "Sex" (gênero) é a variável com maior impacto.
+Os valores SHAP atribuem a cada feature uma contribuição proporcional ao impacto que ela tem nas previsões. Eles permitem visualizar quais variáveis foram mais influentes na decisão final, tanto para previsões individuais quanto para o comportamento geral do modelo.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/e7cae3e6-cdf8-43e4-b730-8238048950e5">
+  <img src="https://github.com/user-attachments/assets/ff995ce5-37a2-4ca3-a2d7-5fe71003d6b1">
 </p>
+- Cores: Vermelho indica valores altos, enquanto azul indica valores baixos para cada feature. <br>
+- Eixo X: Representa o impacto de cada variável na previsão final. Valores positivos aumentam a probabilidade de uma determinada classe (por exemplo, sobreviver), enquanto valores negativos a diminuem.
+Neste caso, o sexo é a variável mais relevante: homens (valores altos, em vermelho) têm menor chance de sobreviver, enquanto mulheres (valores baixos, em azul) têm maior chance de sobrevivência.
+
+<p><br></p>
 
 **Conexão entre Curva ROC e SHAP** <br>
 Enquanto a Curva ROC mede o desempenho geral do modelo em discriminar entre as classes, ela não revela quais atributos foram mais importantes no processo de tomada de decisão. Já os valores SHAP fornecem uma explicação detalhada sobre como o modelo usa cada feature para gerar suas previsões. <br>
